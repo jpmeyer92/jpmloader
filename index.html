@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="js/jpmloader/jpmloader.css" />
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jpmloader/jquery.jpmloader.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("button").click(function()
+			{
+				$.loader(
+				{
+					action:"show",
+					backgroundColor:"rgba(192, 192, 192, 0.8)",
+					textColor:"rgba(32, 32, 32, 1.0)",
+					text:"Please Wait...",
+				});
+				
+				window.setTimeout(function()
+				{
+					$.loader(
+					{
+						action:"hide"
+					});
+				}, 2000);
+				
+				
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<div class="header">
+		<h1>JPMLoader</h1>
+	</div>
+	<div class="content">
+		<p>
+			Click the button below to see the loading dialog.<br />
+			In order to use the dialog, include jQuery into your page and call the following code when you want the dialog:<br />
+			<code>
+				$.loader({action:"show"});
+			</code>
+		</p>
+		<p>
+			And use the following to hide the loading dialog:<br />
+			<code>
+				$.loader({action:"hide"});
+			</code>
+			<br />
+			The following options are available:<br />
+		</p>
+		<button>Load Something</button>
+	</div>
+	<div class="footer">
+		Created by JP Meyer
+	</div>
+</body>
+</html>
